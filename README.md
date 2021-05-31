@@ -81,3 +81,42 @@ WGSL is still evolving, so some things may change before the final version. This
   </tr>
 </table>
 
+## Variables
+
+<table>
+  <tr>
+    <th>WGSL</th>
+    <th>GLSL</th>
+    <th>Note</th>
+  </tr>
+  <tr>
+    <td><samp>var m: i32 = 4;</samp></td>
+    <td><samp>int m = 4;</samp></td>
+    <td><em>var</em> creates a local variable.</td>
+  </tr>
+  <tr>
+    <td><samp>let m: i32 = 4;</samp></td>
+    <td><em>Not available?</em></td>
+    <td><em>let</em> creates an immutable binding.</td>
+  </tr>
+</table>
+
+## Literals
+
+<table>
+  <tr>
+    <th>WGSL</th>
+    <th>GLSL</th>
+    <th>Note</th>
+  </tr>
+  <tr>
+    <td><samp>123</samp></td>
+    <td><samp>123</samp> (when used in <samp>int</samp> context)</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><samp>123u</samp>, <samp>123u32</samp></td>
+    <td><samp>123</samp> (when used in <samp>uint</samp> context)</td>
+    <td>WGSL does not infer int type from context; you need to be explicit.</td>
+  </tr>
+</table>
