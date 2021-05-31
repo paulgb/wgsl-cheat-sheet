@@ -41,7 +41,7 @@ WGSL is still evolving, so some things may change before the final version. This
   </tr>
 </table>
 
-### Vectors
+### Vectors and Matrices
 
 <table>
   <tr>
@@ -52,36 +52,32 @@ WGSL is still evolving, so some things may change before the final version. This
   <tr>
     <td><samp>vec<em>N</em>&lt;bool&gt;</samp></td>
     <td><samp>bvec<em>N</em></samp></td>
-    <td>Binary vector of <em>N</em> ∈ {2, 3, 4} bools.</td>
+    <td>Vector of <em>N</em> ∈ {2, 3, 4} bools.</td>
   </tr>
   <tr>
     <td><samp>vec<em>N</em>&lt;i32&gt;</samp></td>
     <td><samp>ivec<em>N</em></samp></td>
-    <td>Binary vector of <em>N</em> ∈ {2, 3, 4} signed integers.</td>
+    <td>Vector of <em>N</em> ∈ {2, 3, 4} signed integers.</td>
   </tr>
   <tr>
     <td><samp>vec<em>N</em>&lt;u32&gt;</samp></td>
     <td><samp>uvec<em>N</em></samp></td>
-    <td>Binary vector of <em>N</em> ∈ {2, 3, 4} unsigned integers.</td>
+    <td>Vector of <em>N</em> ∈ {2, 3, 4} unsigned integers.</td>
   </tr>
   <tr>
     <td><samp>vec<em>N</em>&lt;f32&gt;</samp></td>
     <td><samp>vec<em>N</em></samp></td>
-    <td>Binary vector of <em>N</em> ∈ {2, 3, 4} floats.</td>
+    <td>Vector of <em>N</em> ∈ {2, 3, 4} floats.</td>
   </tr>
   <tr>
     <td><em>Not available</em></td>
     <td><samp>dvec<em>N</em></samp></td>
-    <td>Binary vector of <em>N</em> ∈ {2, 3, 4} double-precision vectors.</td>
+    <td>Vector of <em>N</em> ∈ {2, 3, 4} double-precision vectors.</td>
   </tr>
-</table>
-
----
-
-
-<table>
   <tr>
-    <th>WGSL</th>
-    <th>GLSL</th>
+    <td><samp>mat<em>N</em>x<em>M</em>&lt;f32&gt;</samp></td>
+    <td><samp>mat<em>N</em>x<em>M</em></samp>, <samp>mat<em>N</em></samp></td>
+    <td>Matrix of <em>NxM</em> ∈ {2, 3, 4} columns and rows (or <em>NxN</em>).</td>
   </tr>
 </table>
+
