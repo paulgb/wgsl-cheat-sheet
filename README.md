@@ -158,3 +158,56 @@ switch (my_var) {
 </pre></td>
   </tr>
 </table>
+
+## Shader Function Structure
+
+### Vertex Shader
+
+<table>
+  <tr>
+    <th>WGSL</th>
+    <th>GLSL</th>
+  </tr>
+  <tr>
+    <td>
+<pre>
+// Structure of vertex shader output
+struct VertexOutput {
+  [[builtin(position)]] position: vec4&lt;f32&gt;;
+  [[location(0)]] baz;
+};
+
+// Vertex shader function
+[[stage(vertex)]]
+fn vs_main(
+  [[location(0)]] foo: vec2&lt;f32&gt;,
+  [[location(1)]] bar: vec4&lt;f32&gt;,
+) -&gt; VertexOutput {
+  var out: VertexOutput;
+  if (foo.x &gt; foo.y) {
+    discard;
+  }
+  out.baz = vec4&lt;f32&gt;(0.0, 1.0, 0.0, 1.0);
+  out.position = bar;
+  return out;
+}
+</pre>
+    </td>
+    <td><pre>
+// Inputs from vertex buffer.
+layout(location=0) in vec2 foo;
+layout(location=1) in vec4 bar;
+
+// Output to frag shader.
+layout(location=0) out vec4 baz;
+
+void main() {
+  if (foo.x &gt; foo.y) {
+    discard;
+  }
+  baz = vec4(0.0, 1.0, 0.0, 1.0);
+  gl_Position = bar;
+}
+</pre></td>
+  </tr>
+</table>
