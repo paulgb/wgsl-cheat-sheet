@@ -41,7 +41,7 @@ WGSL is still evolving, so some things may change before the final version. This
   </tr>
 </table>
 
-### Vectors and Matrices
+### Composite Types
 
 <table>
   <tr>
@@ -118,5 +118,43 @@ WGSL is still evolving, so some things may change before the final version. This
     <td><samp>123u</samp>, <samp>123u32</samp></td>
     <td><samp>123</samp> (when used in <samp>uint</samp> context)</td>
     <td>WGSL does not infer int type from context; you need to be explicit.</td>
+  </tr>
+</table>
+
+## `switch` syntax
+
+WGSL needs explicit `fallthrough` to not `break` at the end of a switch block. `my_var` must be a `u32` (I think?).
+
+<table>
+  <tr>
+    <th>WGSL</th>
+    <th>GLSL</th>
+  </tr>
+  <tr>
+    <td>
+<pre>
+switch (my_var) {
+  case 0: {
+    fallthrough;
+  }
+  case 1: {
+    foo = 1;
+  }
+  case 2: {
+    foo = 4;
+  }
+}
+</pre>
+    </td>
+    <td><pre>
+switch (my_var) {
+  case 0:
+  case 1:
+    foo = 1;
+    break;
+  case 2:
+    foo = 4;
+}
+</pre></td>
   </tr>
 </table>
