@@ -197,10 +197,10 @@ fn vs_main(
 // Inputs from vertex buffer.
 layout(location=0) in vec2 foo;
 layout(location=1) in vec4 bar;
-
+&#9;
 // Output to frag shader.
 layout(location=0) out vec4 baz;
-
+&#9;
 void main() {
 &#9;if (foo.x &gt; foo.y) {
 &#9;&#9;discard;
