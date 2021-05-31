@@ -173,23 +173,23 @@ switch (my_var) {
 <pre>
 // Structure of vertex shader output
 struct VertexOutput {
-  [[builtin(position)]] position: vec4&lt;f32&gt;;
-  [[location(0)]] baz;
+&#9;[[builtin(position)]] position: vec4&lt;f32&gt;;
+&#9;[[location(0)]] baz;
 };
-
+&#9;
 // Vertex shader function
 [[stage(vertex)]]
 fn vs_main(
-  [[location(0)]] foo: vec2&lt;f32&gt;,
-  [[location(1)]] bar: vec4&lt;f32&gt;,
+&#9;[[location(0)]] foo: vec2&lt;f32&gt;,
+&#9;[[location(1)]] bar: vec4&lt;f32&gt;,
 ) -&gt; VertexOutput {
-  var out: VertexOutput;
-  if (foo.x &gt; foo.y) {
-    discard;
-  }
-  out.baz = vec4&lt;f32&gt;(0.0, 1.0, 0.0, 1.0);
-  out.position = bar;
-  return out;
+&#9;var out: VertexOutput;
+&#9;if (foo.x &gt; foo.y) {
+&#9;&#9;discard;
+&#9;}
+&#9;out.baz = vec4&lt;f32&gt;(0.0, 1.0, 0.0, 1.0);
+&#9;out.position = bar;
+&#9;return out;
 }
 </pre>
     </td>
@@ -202,11 +202,11 @@ layout(location=1) in vec4 bar;
 layout(location=0) out vec4 baz;
 
 void main() {
-  if (foo.x &gt; foo.y) {
-    discard;
-  }
-  baz = vec4(0.0, 1.0, 0.0, 1.0);
-  gl_Position = bar;
+&#9;if (foo.x &gt; foo.y) {
+&#9;&#9;discard;
+&#9;}
+&#9;baz = vec4(0.0, 1.0, 0.0, 1.0);
+&#9;gl_Position = bar;
 }
 </pre></td>
   </tr>
